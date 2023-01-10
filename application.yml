@@ -7,3 +7,9 @@ eureka:
 
   instance:
     localhost
+    
+microservice:
+  addGroups:
+    endpoints:
+      endpoint:
+        uri: http://localhost:7003/firebase/addGroups
