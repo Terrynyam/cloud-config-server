@@ -9,7 +9,7 @@ eureka:
     localhost
     
 microservice:
-  addGroups:
+  ceoart-firebase-service:
     endpoints:
       endpoint:
-        uri: http://localhost:7003/firebase/addGroups
+        uri: http://localhost:7003/firebase
