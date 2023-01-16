@@ -1,0 +1,55 @@
+spring:
+  datasource:
+    url: jdbc:sqlserver://localhost\MSSQLSERVER:1433;database=ceoart_db;encrypt=true;trustServerCertificate=true
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    username: terry
+    password: 'terry'
+    name:
+
+  main:
+    allow-bean-definition-overriding: true
+
+
+  application:
+    name: ceoartapplication-core
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+      database-platform: org.hibernate.dialect.SQLServerDialect
+      show-sql: true
+      format_sql: true
+
+
+  mail:
+    host: smtp.office365.com
+    port: 587
+    username: noreply@afrosoft.co.zw
+    password: '%$Afro123'
+    test-connection: true
+
+server:
+  port: 5300
+  baseUrl: http://localhost:${server.port}
+  time-zone: UTC
+  servlet:
+    context-path: "/v1/"
+
+signing:
+  key: zanu_pf_default_user
+
+default:
+  client:
+    id: client_id
+    secret: client_secret
+    grantTypes: refresh_token,password,client_credentials
+    authorities: read,write
+    scopes: read,write
+    authUrl: /v1/oauth/token
+
+                                        spring.mvc.view.prefix:"/resources/templates/"
+    
+             spring.mvc.view.suffix = .jsp
+                  spring.mvc.static-path-pattern=/resources/**
+
+
