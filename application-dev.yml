@@ -1,0 +1,55 @@
+spring:
+  datasource:
+    url: jdbc:sqlserver://192.168.10.187;instance=.;DatabaseName=ceoart_db
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    username: sa
+    password: '%$Afro123'
+
+  main:
+    allow-bean-definition-overriding: true
+
+
+  application:
+    name: ceoartapplication-core
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+      database-platform: org.hibernate.dialect.SQLServerDialect
+      show-sql: true
+      format_sql: true
+
+  #  mail:
+  #    host: smtp.office365.com
+  #    port: 587
+  #    username: zanupfsubs@afrosoft.co.zw
+  #    password: '%$Zanu123'
+  #    test-connection: true
+
+  mail:
+    host: smtp.office365.com
+    port: 587
+    username: noreply@afrosoft.co.zw
+    password: 'Password123'
+    test-connection: true
+
+server:
+  port: 5300
+  baseUrl: http://localhost:${server.port}
+  time-zone: UTC
+  servlet:
+    context-path: "/v1/"
+
+signing:
+  key: zanu_pf_default_user
+
+default:
+  client:
+    id: client_id
+    secret: client_secret
+    grantTypes: refresh_token,password,client_credentials
+    authorities: read,write
+    scopes: read,write
+    authUrl: /v1/oauth/token
+
+
